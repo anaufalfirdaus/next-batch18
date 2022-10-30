@@ -8,6 +8,7 @@ import { doPushSignoutRequest } from '../../redux-saga/Action/UsrAction'
 const navigation = [
     { name: 'Dashboard', href: '/', current: true },
     { name: 'Region Redux', href: '/Region/RegionReduxApi', current: false },
+    { name: 'Region Pagination', href:'/Region/RegionView',current: false},
     { name: 'Login', href: '/signin', current: false }
 ]
 
