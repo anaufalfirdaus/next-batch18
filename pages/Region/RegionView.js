@@ -5,6 +5,7 @@ import { DelRegionRequest, GetRegionRequest } from '../redux-saga/Action/RegionA
 import { Menu, Transition } from '@headlessui/react'
 import FormikAddRegionApi from './FormikAddRegionApi';
 import FormikEditRegionApi from './FormikEditRegionApi';
+import { domain, image, urlImg } from '../config/config';
 //theming toast
 import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
@@ -25,6 +26,7 @@ import {
 } from '@heroicons/react/solid'
 
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const columns = [
     { name: 'REGION NAME' },
@@ -154,7 +156,8 @@ export default function Batch() {
                                                     <tr key={data.regionId}>
                                                         <td className="px-6 py-2 text-center whitespace-nowrap text-sm text-gray-900">{data.regionName}</td>
                                                         <td className="px-6 py-2 text-center whitespace-nowrap text-sm text-gray-900">{data.regionFile}</td>
-                                                        <td className="px-6 py-2 text-center whitespace-nowrap text-xs text-gray-900">{data.regionPhoto}</td>
+                                                        <td className="px-6 py-2 text-center whitespace-nowrap text-sm text-gray-900"><img src={data.regionPhoto?`${urlImg}/${data.regionPhoto}`:"/favicon.ico"} width={20} height={10} alt="profile"/></td>
+                                                        {/* <td className="px-6 py-2 text-center whitespace-nowrap text-xs text-gray-900"><Image src={data.regionPhoto?`${domain}/api/region/files/${data.regionPhoto}`:"/favicon.ico"} width={20} height={10} alt='profile'/></td> */}
                                                         <td className="pr-6">
                                                             <Menu as="div" className="relative flex justify-end items-center">
                                                                 {({ open }) => (

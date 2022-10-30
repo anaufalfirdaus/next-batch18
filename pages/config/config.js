@@ -1,4 +1,14 @@
-const config = {
-    domain : 'http://localhost:3002'
+module.exports = {
+    domain: 'http://localhost:3002',
+    urlImg: 'http://localhost:3002/api/region/files',
+    image: {
+        remotePatterns: [
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '3002',
+                pathname: '/api/region/files/**',
+            },
+        ],
+    }
 }
-export default config
